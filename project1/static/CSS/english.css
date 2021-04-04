@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("/static/Images/london.jpg") 50% 0 no-repeat fixed;
+    background-size: cover;
+}
+
+h1, h3{
+  text-transform: uppercase;
+  font-weight: normal;
+  font-family: 'Sofia';
+  font-size: 80px;
+}
+
+.forums{
+    width: 600px;
+    display: block;
+    margin: 40px auto;
+    position: relative;
+    align-items: left;
+}
+
+.forums .forum{
+    float: left;
+    display: block;
+}
+
+.forums .forum>input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.forums .forum>label {
+    display: block;
+    padding: 6px 21px;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    color: #FFF;
+    background: #4A83FD;
+}
+
+.forums .content {
+    z-index: 0;/* or display: none; */
+    overflow: hidden;
+    width: 700px;
+    height: 600px;
+    padding: 25px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    background: url("/static/Images/UKFlag.png") 0% 0 no-repeat fixed;
+    background-size: contain;
+    color: #DFDFDF;
+    
+    opacity:0;
+    transition: opacity 400ms ease-out;
+}
+
+.forums>.forum>[id^="tab"]:checked + label {
+    top: 0;
+    background: #303030;
+    color: #F5F5F5;
+}
+
+.forums>.forum>[id^="tab"]:checked ~ [id^="tab-content"] {
+    z-index: 1;/* or display: block; */
+   
+    opacity: 1;
+    transition: opacity 400ms ease-out;
+}
+input[type=text] {
+  width: 100%;
+  padding: 6px 5px;
+  margin: 5px 0;
+  box-sizing: background;
+  border: solid red;
+}
+.post{
+    font-size: 80px;
+    font-family: bold;
+    color: #008000
+}

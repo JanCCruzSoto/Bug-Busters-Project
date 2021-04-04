@@ -3,18 +3,55 @@
 
 
 {% block content %}
-<head><link rel="stylesheet" href="{% static 'CSS/style.css' %}"></head>
-<body style="background-color: blue;">
-<h1>Japanese</h1>
-<input
- type="text"
- placeholder="Any specific questions?"
- />
-<button>Search</button>
-<strong>NEWS</strong>
-<strong>CASUAL</strong>
-<strong>EDUCATIONAL</strong>
-<strong>TRAVEL</strong>
+<head>
+ <link rel="stylesheet" href="{% static 'CSS/japanese.css' %}">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+<h1>日本語</h1>
+<br/>
+<ul class="forums">
+ <li class="forum">
+  <input type="radio" name="forums" checked="checked" id="tab1" />
+  <label for="tab1">ニュース</label>
+  <div id="tab-content" class= "content">
+   <p>Blah Blah wah blah</p>
+  </div>
+  </li>
+
+ <li class="forum">
+  <input type="radio" name="forums" checked="checked" id="tab2" />
+  <label for="tab2">カジュアル</label>
+  <div id="tab-content2" class= "content">
+   <p>今日は何をしましたか？面白いミームを見ましたか？ここに投稿してください！</p>
+   <button>投稿を作成する</button>
+   <hr/>
+   <br/>
+   <div class="post">
+   <i class="material-icons">face</i>
+   <input type="text" name="post" id="post" />
+   </div>
+  </div>
+ </li>
+
+ <li class="forum">
+  <input type="radio" name="forums" checked="checked" id="tab3" />
+  <label for="tab3">教育</label>
+  <div id="tab-content3" class= "content">
+   <p>赤とは何ですか？</p>
+  </div>
+ </li>
+ <li class="forum">
+  <input type="radio" name="forums" checked="checked" id="tab4" />
+  <label for="tab4">トラベル</label>
+  <div id="tab-content4" class= "content">
+   <p>渋谷はどこ？</p>
+  </div>
+ </li>
+
+</ul>
+
 
 
 </body>

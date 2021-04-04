@@ -3,18 +3,56 @@
 
 
 {% block content %}
-<head><link rel="stylesheet" href="{% static 'CSS/style.css' %}"></head>
-<body style="background-color: blue;">
+<head>
+ <link rel="stylesheet" href="{% static 'CSS/english.css' %}">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+</head>
+<body>
 <h1>English</h1>
-<input
- type="text"
- placeholder="Any specific questions?"
- />
-<button>Search</button>
-<strong>NEWS</strong>
-<strong>CASUAL</strong>
-<strong>EDUCATIONAL</strong>
-<strong>TRAVEL</strong>
+<br/>
+<ul class="forums">
+ <li class="forum">
+  <input type="radio" name="forums" checked="checked" id="tab1" />
+  <label for="tab1">NEWS</label>
+  <div id="tab-content" class= "content">
+   <p>Blah Blah wah blah</p>
+  </div>
+  </li>
+
+ <li class="forum">
+  <input type="radio" name="forums" checked="checked" id="tab2" />
+  <label for="tab2">CASUAL</label>
+  <div id="tab-content2" class= "content">
+   <p>What did you do today?Saw a funny meme?Post about it here!</p>
+   <button>Create a Post</button>
+   <hr/>
+   <br/>
+   <div class="post">
+   <i class="material-icons">face</i>
+   <input type="text" name="post" id="post" />
+   </div>
+  </div>
+ </li>
+
+ <li class="forum">
+  <input type="radio" name="forums" checked="checked" id="tab3" />
+  <label for="tab3">EDUCATIONAL</label>
+  <div id="tab-content3" class= "content">
+   <p>what is a verb??</p>
+  </div>
+ </li>
+ <li class="forum">
+  <input type="radio" name="forums" checked="checked" id="tab4" />
+  <label for="tab4">Travel</label>
+  <div id="tab-content4" class= "content">
+   <p>Where is big ben?</p>
+  </div>
+ </li>
+
+</ul>
+
 
 
 </body>
