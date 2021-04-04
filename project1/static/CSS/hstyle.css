@@ -1,0 +1,99 @@
+{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("images/photo.jpg");
+    background-size: cover;
+    background-position: center;
+
+    font-family: sans-serif;
+}
+.menu-bar{
+    background: gray;
+    text-align: center;
+
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: white;
+
+}
+.menu-bar ul li {
+    width: 20px;
+    margin: 15px;
+    padding: 15px;
+
+
+}
+.menu-bar ul li a{
+    text-decoration: none ;
+    color: white;
+}
+.active, .menu-bar ul li:hover
+{
+    background: gray;
+    border-radius: 3px;
+
+}
+.menu-bar .fa {
+    margin-right: 8px;
+
+}
+.sub-menu1{
+    display:none;
+
+}
+.menu-bar ul li:hover .sub-menu1{
+    display: block;
+    position: absolute;
+    background: gray;
+    margin-top: 15px;
+    margin-left: -15px;
+
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+
+}
+.menu-bar ul li:hover .sub-menu1 ul li:last-child{
+    border-bottom: none;
+}
+.menu-bar ul li:hover .sub-menu1 ul li a:hover{
+    color: black;
+}
+.menu-bar .center{
+    position: absolute;
+	left: 50%;
+	top: 55%;
+	transform: translate(-50%, -50%);
+	font-family: sans-serif;
+	user-select: none;
+}
+.center h1{
+    color: white;
+    font-size: 70px;
+	width: 900px;
+	font-weight: bold;
+	text-align: center;
+
+}
+.center h2{
+    color: white;
+	font-size: 70px;
+	font-weight: bold;
+	margin-top: 10px;
+	width: 885px;
+	text-align: center;
+}

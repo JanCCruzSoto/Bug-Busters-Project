@@ -8,7 +8,6 @@ class ProfileForm(forms.ModelForm):
         model = profiles
         fields = [
             'email',
-            'password',
             'name',
             'lastName',
             'birth',
