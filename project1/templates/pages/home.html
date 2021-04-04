@@ -1,18 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block content %}
-<link rel="stylesheet" href="style.css"/>
-<body style="background-color: rgb(48, 48, 48)">
-    <link rel="stylesheet"
-    href="style.css"/>
-    <h1>
-    Lingopathy
-    </h1>
-    <p>Forum for easy access to language teachers, native speakers
-    and students alike.
-    </p>
-<div class = "profile">
-    {% if user.is_authenticated %}
+<head xmlns="http://www.w3.org/1999/html"><link rel="stylesheet" href="{% static 'CSS/hstyle.css' %}"></head>
+<body>
+    <div class="menu-bar">
+<ul>
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Forums</a>
+        <div class="sub-menu1">
+
+            <ul>
+                <li><a href="english">English</a> </li>
+                <li><a href="spanish/">Spanish</a> </li>
+                <li><a href="japanese/">Japanese</a> </li>
+            </ul>
+        </div>
+
+    </li>
+    <li><a href="#">Contact</a></li>
+
+ {% if user.is_authenticated %}
 <a href="{% url 'logout' %}">Logout</a>
 {% else %}
 <a href="{% url 'login' %}">Login</a>
@@ -21,16 +30,16 @@
         <a href="signup">
         <strong class = "user">Sign-Up</strong>
     </a>
+            <a href="profile">
+        <strong class = "user">My Profile</strong>
+    </a>
 
+</ul>
+        	<div class="center">
+			<h1>Forum for easy access to language teachers,</h1>
+			<h2>native speakers and students alike.</h2>
 
-
-
-</div>
-<h3 class = "title">Forums:</h3>
-<div class="Forums">
-<a href="spanish"><h3 class="forum">Espanol</h3></a>
-<a href="english"><h3 class="forum" >English</h3></a>
-<a href="japanese"><h3 class="forum">Japanese</h3></a>
+		</div>
 </div>
 
 
