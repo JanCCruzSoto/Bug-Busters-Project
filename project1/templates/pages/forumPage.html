@@ -1,0 +1,181 @@
+
+
+
+{% block content %}
+<style>
+    {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+    body{
+        background-image: url("images/photo.jpg");
+        background-size: cover;
+        background-position: center;
+
+        font-family: sans-serif;
+    }
+    .menu-bar{
+        background: gray;
+        text-align: center;
+
+    }
+    .menu-bar ul{
+        display: inline-flex;
+        list-style: none;
+        color: white;
+
+    }
+    .menu-bar ul li {
+        width: 120px;
+        margin: 15px;
+        padding: 15px;
+
+
+    }
+    .menu-bar ul li a{
+        text-decoration: none ;
+        color: white;
+    }
+    .active, .menu-bar ul li:hover
+    {
+        background: #696969;
+        border-radius: 3px;
+
+    }
+    .menu-bar .fa {
+        margin-right: 8px;
+
+    }
+    .sub-menu1{
+        display:none;
+
+    }
+    .menu-bar ul li:hover .sub-menu1{
+        display: block;
+        position: absolute;
+        background: gray;
+        margin-top: 15px;
+        margin-left: -30px;
+
+    }
+    .menu-bar ul li:hover .sub-menu1 ul{
+        display: block;
+        margin: 8px;
+    }
+    .menu-bar ul li:hover .sub-menu1 ul li {
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dotted #fff;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+
+    }
+    .menu-bar ul li:hover .sub-menu1 ul li:last-child{
+        border-bottom: none;
+    }
+    .menu-bar ul li:hover .sub-menu1 ul li a:hover{
+        color: black;
+    }
+    .sub-menu2{
+        display:none;
+
+    }
+    .menu-bar ul li:hover .sub-menu2{
+        display: block;
+        position: absolute;
+        background: gray;
+        margin-top: 15px;
+        margin-left: -15px;
+
+    }
+    .menu-bar ul li:hover .sub-menu2 ul{
+        display: block;
+        margin: 10px;
+    }
+    .menu-bar ul li:hover .sub-menu2 ul li {
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dotted #fff;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+
+    }
+    .menu-bar ul li:hover .sub-menu2 ul li:last-child{
+        border-bottom: none;
+    }
+    .menu-bar ul li:hover .sub-menu2 ul li a:hover{
+        color: black;
+    }
+    .menu-bar .center{
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        font-family: sans-serif;
+        user-select: none;
+    }
+    body{
+        background-image: url("/static/CSS/images/photo.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    .postblock{
+        margin:auto;
+        text-align: center;
+        border: solid;
+        width: 300px;
+        background-color: rgb(232, 226, 188);
+    }
+    .subtitle{
+        font-weight: bold;
+        color: rgb(40,40,40);
+    }
+    .postblock > p{
+        font-style: italic;
+        color: rgb(60,60,60);
+    }
+
+
+
+</style>
+<body>
+<div class="menu-bar">
+<ul>
+
+    <li><a class="navbar-brand" href="{% url 'home' %}">Home</a></li>
+ {% if user.is_authenticated %}
+<li><a href="{% url 'logout' %}">Logout</a></li>
+    <li><a href="{% url 'profile' user.pk %}">
+        <strong class = "user">My Profile</strong>
+    </a></li>
+{% else %}
+<li><a href="{% url 'login' %}">Login</a></li>
+{% endif %}
+    <li><a href="signup">
+        <strong class = "user">Sign-Up</strong>
+    </a></li>
+
+
+
+</ul>
+</div>
+<br/>
+    {% for post in posts %}
+        <div class="postblock">
+            <h2 class="subtitle">{{ post.title }}</h2>
+
+            <p>{{ post.intro }}</p>
+
+            <small>Posted at {{ post.date_added }}</small>
+
+            <br/>
+
+            <a href="{% url 'post_detail' post.slug %}">Read more</a>
+        </div>
+        <br/>
+    {% endfor %}
+</body>
+{% endblock %}
