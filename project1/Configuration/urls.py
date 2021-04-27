@@ -18,7 +18,7 @@ from profiles import views as pviews
 from django.contrib import admin
 from django.urls import path
 from pages.views import home_view, forum_view
-from Home.views import english, spanish, japanese
+from Home.views import english, spanish, japanese, forumPage, post_detail
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -31,8 +31,9 @@ urlpatterns = [
     path('create/', pviews.profile_create_view),
     path('japanese/', japanese),
     path('english/', english),
-    path('forum/', forum_view),
-    path('spanish/', spanish),
+    path('forumPage/', forumPage),
+    path('admin/', admin.site.urls),
+    path('<slug:slug>/', post_detail, name='post_detail'),    path('spanish/', spanish),
     path('', views.home, name="home"),
     path('contact/', views.contact, name="contact"),
     path('about/', views.about, name="about"),
